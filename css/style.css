@@ -137,8 +137,9 @@ em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--blue)}
 .course li{font-size:12px;font-weight:700;background:var(--blue-soft);color:var(--blue);padding:4px 10px;border-radius:999px}
 .course-go{position:absolute;right:20px;bottom:18px;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--blue-soft);color:var(--blue);font-weight:700;transition:transform .3s var(--spring),background .2s,color .2s}
 .course:hover .course-go{background:var(--accent);color:var(--navy);transform:rotate(-45deg)}
-.course.is-dim{opacity:.3;transform:scale(.97);box-shadow:none}
-.course.is-dim:hover{transform:scale(.97)}
+/* Beats .motion .reveal.is-in, which otherwise forces full opacity once a card has scrolled in */
+.courses .course.reveal.is-dim,.courses .course.is-dim{opacity:.3;transform:scale(.97);box-shadow:none;filter:grayscale(1)}
+.motion .courses .course.reveal.is-in{transition:transform .35s var(--ease),box-shadow .35s,border-color .3s,opacity .3s,filter .3s}
 
 /* why */
 .why{background:#fff}
